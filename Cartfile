@@ -1,3 +1,4 @@
-github "izqui/taylor" "697446f"
-github "Carthage/Commandant" == 0.7.0
-github "jpsim/SourceKitten" == 0.11.0
+github "Carthage/Commandant" == 0.15.0
+github "jpsim/SourceKitten" == 0.20.0
+github "vgorloff/taylor" "vg_xcode13_compatibility-fixes"
+github "tomlokhorst/XcodeEdit" == 0.4.0

@@ -14,7 +14,7 @@ profile
 *.moved-aside
 DerivedData
 .idea/
-Carthage/Build
+Carthage
 .build
 dist
 SourceKittenDaemon.pkg
