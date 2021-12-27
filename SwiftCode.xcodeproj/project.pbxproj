@@ -15,6 +15,7 @@
 		4DC1D03C1C105ABC00B5948A /* SwiftHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1D0391C105ABC00B5948A /* SwiftHighlighter.swift */; };
 		4DC1D0401C105C8300B5948A /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1D03F1C105C8300B5948A /* EditorController.swift */; };
 		4DC1D0821C12F74600B5948A /* Completer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1D0811C12F74600B5948A /* Completer.swift */; };
+		80C85513277A48DD00853C72 /* SwiftSyntaxHighligher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C85512277A48DD00853C72 /* SwiftSyntaxHighligher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 		4DC1D0391C105ABC00B5948A /* SwiftHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHighlighter.swift; sourceTree = "<group>"; };
 		4DC1D03F1C105C8300B5948A /* EditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
 		4DC1D0811C12F74600B5948A /* Completer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Completer.swift; sourceTree = "<group>"; };
+		80C85512277A48DD00853C72 /* SwiftSyntaxHighligher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSyntaxHighligher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,33 +76,18 @@
 		4DC1D02B1C1059FE00B5948A /* SwiftCode */ = {
 			isa = PBXGroup;
 			children = (
-				4DC1D03E1C105C6D00B5948A /* TreeView */,
-				4DC1D03D1C105C5F00B5948A /* SourceView */,
+				4DC1D0371C105ABC00B5948A /* HighlightingTextView.swift */,
+				4DC1D0381C105ABC00B5948A /* RulerView.swift */,
+				4DC1D0391C105ABC00B5948A /* SwiftHighlighter.swift */,
 				4DC1D02C1C1059FE00B5948A /* AppDelegate.swift */,
 				4DC1D02E1C1059FE00B5948A /* Assets.xcassets */,
 				4DC1D0301C1059FE00B5948A /* MainMenu.xib */,
 				4DC1D0331C1059FE00B5948A /* Info.plist */,
 				4DC1D03F1C105C8300B5948A /* EditorController.swift */,
 				4DC1D0811C12F74600B5948A /* Completer.swift */,
+				80C85512277A48DD00853C72 /* SwiftSyntaxHighligher.swift */,
 			);
 			path = SwiftCode;
-			sourceTree = "<group>";
-		};
-		4DC1D03D1C105C5F00B5948A /* SourceView */ = {
-			isa = PBXGroup;
-			children = (
-				4DC1D0371C105ABC00B5948A /* HighlightingTextView.swift */,
-				4DC1D0381C105ABC00B5948A /* RulerView.swift */,
-				4DC1D0391C105ABC00B5948A /* SwiftHighlighter.swift */,
-			);
-			name = SourceView;
-			sourceTree = "<group>";
-		};
-		4DC1D03E1C105C6D00B5948A /* TreeView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = TreeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +207,7 @@
 				4DC1D03C1C105ABC00B5948A /* SwiftHighlighter.swift in Sources */,
 				4DC1D0401C105C8300B5948A /* EditorController.swift in Sources */,
 				4DC1D03B1C105ABC00B5948A /* RulerView.swift in Sources */,
+				80C85513277A48DD00853C72 /* SwiftSyntaxHighligher.swift in Sources */,
 				4DC1D03A1C105ABC00B5948A /* HighlightingTextView.swift in Sources */,
 				4DC1D0821C12F74600B5948A /* Completer.swift in Sources */,
 			);

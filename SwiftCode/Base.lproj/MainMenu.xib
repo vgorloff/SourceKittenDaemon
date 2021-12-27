@@ -603,7 +603,7 @@
                     </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="139" y="154"/>
+            <point key="canvasLocation" x="248" y="67"/>
         </menu>
         <window title="SwiftCode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -786,7 +786,7 @@
                     <constraint firstItem="f6s-2Y-by2" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="tzo-Zn-jpM"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="604.5" y="481.5"/>
+            <point key="canvasLocation" x="498" y="477"/>
         </window>
         <customObject id="xLM-nA-tDC" customClass="EditorController" customModule="SwiftCode" customModuleProvider="target">
             <connections>
@@ -800,14 +800,14 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="S0R-uE-z6Y" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="167" y="107" width="357" height="248"/>
+            <rect key="contentRect" x="167" y="107" width="534" height="341"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
             <view key="contentView" id="GHt-gK-Z2f">
-                <rect key="frame" x="0.0" y="0.0" width="357" height="248"/>
+                <rect key="frame" x="0.0" y="0.0" width="534" height="341"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-J8-Vu4">
-                        <rect key="frame" x="3" y="79" width="356" height="79"/>
+                        <rect key="frame" x="3" y="172" width="533" height="79"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="79" id="AzA-lR-lMd"/>
                         </constraints>
@@ -824,7 +824,7 @@
                     <constraint firstItem="aS1-J8-Vu4" firstAttribute="leading" secondItem="GHt-gK-Z2f" secondAttribute="leading" constant="5" id="TlE-Va-fHr"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="451.5" y="1002"/>
+            <point key="canvasLocation" x="363" y="1048.5"/>
         </window>
     </objects>
 </document>

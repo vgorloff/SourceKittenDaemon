@@ -8,7 +8,7 @@
 
 import Cocoa
 
-let SWIFT_ELEMENT_TYPE_KEY = NSAttributedString.Key("swiftElementType")
+private let SWIFT_ELEMENT_TYPE_KEY = NSAttributedString.Key("swiftElementType")
 
 class SyntaxHighligher: NSObject, NSTextStorageDelegate, NSLayoutManagerDelegate {
     var textStorage : NSTextStorage?
@@ -69,7 +69,7 @@ class SyntaxHighligher: NSObject, NSTextStorageDelegate, NSLayoutManagerDelegate
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(textStorageDidProcessEditing(_:)),
                                                name: NSView.boundsDidChangeNotification,
-            object: scrollView.contentView)
+                                               object: scrollView.contentView)
         parse(nil)
     }
     
@@ -84,7 +84,7 @@ class SyntaxHighligher: NSObject, NSTextStorageDelegate, NSLayoutManagerDelegate
         let glyphRange = layoutManager.glyphRange(forBoundingRect: textVisibleRect,
                                                   in: container)
         return layoutManager.characterRange(forGlyphRange: glyphRange,
-            actualGlyphRange: nil)
+                                            actualGlyphRange: nil)
     }
     
     func parse(_ sender: AnyObject?) {
@@ -94,7 +94,7 @@ class SyntaxHighligher: NSObject, NSTextStorageDelegate, NSLayoutManagerDelegate
         for layoutManager in layoutManagerList {
             layoutManager.delegate = self
             layoutManager.removeTemporaryAttribute(SWIFT_ELEMENT_TYPE_KEY,
-                forCharacterRange: range)
+                                                   forCharacterRange: range)
         }
         guard let r = regex else {return}
         
@@ -106,7 +106,7 @@ class SyntaxHighligher: NSObject, NSTextStorageDelegate, NSLayoutManagerDelegate
                 }
                 for layoutManager in layoutManagerList {
                     layoutManager.addTemporaryAttributes([SWIFT_ELEMENT_TYPE_KEY: self.matchers[(matchIndex - 1) * 2]],
-                        forCharacterRange: matchRange)
+                                                         forCharacterRange: matchRange)
                 }
             }
         }
@@ -131,24 +131,4 @@ class SyntaxHighligher: NSObject, NSTextStorageDelegate, NSLayoutManagerDelegate
 
 }
 
-class SwiftSyntaxHighligher: SyntaxHighligher {
-    
-    override func completionChars() -> [Character] {
-        // return the only char for which we offer completion right now
-        return [Character.init(".")]
-    }
-    
-    override func reservedMatchers() -> [String] {
-        return [ "COMMENT", "/\\*(?s:.)*?(?:\\*/|\\z)",
-            "COMMENT", "//.*",
-            "QUOTES",  "(?ms:\"{3}(?!\\\"{1,3}).*?(?:\"{3}|\\z))|(?:\"{1}(?!\\\").*?(?:\"|\\Z))",
-            "SINGLE_QUOTES", "(?ms:'{3}(?!'{1,3}).*?(?:'{3}|\\z))|(?:'[^'].*?(?:'|\\z))",
-            "DIGIT", "(?<=\\b)(?:0x)?\\d+[efld]?",
-            "OPERATION", "[\\w\\$&&[\\D]][\\w\\$]* *\\("]
-    }
-    
-    override func reservedWords() -> [String] {
-        return ["(?:\\bclass\\b)", "(?:\\bdeinit\\b)", "(?:\\benum\\b)", "(?:\\bextension\\b)", "(?:\\bfunc\\b)", "(?:\\bimport\\b)", "(?:\\binit\\b)", "(?:\\binternal\\b)", "(?:\\blet\\b)", "(?:\\boperator\\b)", "(?:\\bprivate\\b)", "(?:\\bprotocol\\b)", "(?:\\bpublic\\b)", "(?:\\bstatic\\b)", "(?:\\bstruct\\b)", "(?:\\bsubscript\\b)", "(?:\\btypealias\\b)", "(?:\\bvar\\b)", "(?:\\bbreak\\b)", "(?:\\bcase\\b)", "(?:\\bcontinue\\b)", "(?:\\bdefault\\b)", "(?:\\bdo\\b)", "(?:\\belse\\b)", "(?:\\bfallthrough\\b)", "(?:\\bfor\\b)", "(?:\\bif\\b)", "(?:\\bin\\b)", "(?:\\breturn\\b)", "(?:\\bswitch\\b)", "(?:\\bwhere\\b)", "(?:\\bwhile\\b)", "(?:\\bas\\b)", "(?:\\bdynamicType\\b)", "(?:\\bfalse\\b)", "(?:\\bis\\b)", "(?:\\bnil\\b)", "(?:\\bself\\b)", "(?:\\bSelf\\b)", "(?:\\bsuper\\b)", "(?:\\btrue\\b)", "(?:\\b__COLUMN__\\b)", "(?:\\b__FILE__\\b)", "(?:\\b__FUNCTION__\\b)", "(?:\\b__LINE__\\b)", "(?:\\bassociativity\\b)", "(?:\\bconvenience\\b)", "(?:\\bdynamic\\b)", "(?:\\bdidSet\\b)", "(?:\\bfinal\\b)", "(?:\\bget\\b)", "(?:\\binfix\\b)", "(?:\\binout\\b)", "(?:\\blazy\\b)", "(?:\\bleft\\b)", "(?:\\bmutating\\b)", "(?:\\bnone\\b)", "(?:\\bnonmutating\\b)", "(?:\\boptional\\b)", "(?:\\boverride\\b)", "(?:\\bpostfix\\b)", "(?:\\bprecedence\\b)", "(?:\\bprefix\\b)", "(?:\\bProtocol\\b)", "(?:\\brequired\\b)", "(?:\\bright\\b)", "(?:\\bset\\b)", "(?:\\bType\\b)", "(?:\\bunowned\\b)", "(?:\\bweak\\b)", "(?:\\bwillSet\\b)", "(?:\\bString\\b)", "(?:\\bInt\\b)", "(?:\\bInt32\\b)", "(?:\\bNSDate\\b)", "(?:\\bCGFloat\\b)", "(?:\\bDecoded\\b)", "(?:\\bArgo.decodable\\b)"];
-    }
-}
 
