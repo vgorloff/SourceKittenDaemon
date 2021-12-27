@@ -67,7 +67,7 @@ class SyntaxHighligher: NSObject, NSTextStorageDelegate, NSLayoutManagerDelegate
         textStorage.delegate = self
         scrollView.contentView.postsBoundsChangedNotifications = true
         NotificationCenter.default.addObserver(self,
-            selector: "textStorageDidProcessEditing:",
+                                               selector: #selector(textStorageDidProcessEditing(_:)),
                                                name: NSView.boundsDidChangeNotification,
             object: scrollView.contentView)
         parse(nil)

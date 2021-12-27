@@ -132,7 +132,7 @@ class RulerView: NSRulerView {
             let ruleThickness = self.ruleThickness
             let newThickness = calculateRuleThickness()
             
-            if fabs(ruleThickness - newThickness) > 1 {
+            if abs(ruleThickness - newThickness) > 1 {
                 DispatchQueue.main.async {
                     self.updateThinkness(CGFloat(ceil(Double(newThickness))))
                 }
@@ -218,7 +218,7 @@ class RulerView: NSRulerView {
     }
     
     
-    func textAttributes() -> [NSAttributedStringKey: Any] {
+    func textAttributes() -> [NSAttributedString.Key: Any] {
         return [
             .font: NSFont.labelFont(ofSize: NSFont.systemFontSize(for: NSControl.ControlSize.mini)),
             .foregroundColor: NSColor(calibratedWhite: 0.42, alpha: 1.0)
