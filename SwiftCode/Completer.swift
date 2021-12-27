@@ -60,7 +60,7 @@ class Completer {
         guard let supportPath = bundle.sharedSupportPath
         else { fatalError("Could not find Support Path") }
         
-        let daemonBinary = (supportPath as NSString).appendingPathComponent("SourceKittenDaemon.app/Contents/MacOS/SourceKittenDaemon")
+        let daemonBinary = (supportPath as NSString).appendingPathComponent("sourcekittend")
         guard FileManager.default.fileExists(atPath: daemonBinary)
         else { fatalError("Could not find SourceKittenDaemon") }
         
@@ -86,7 +86,7 @@ class Completer {
                 else { continue }
                 content += dataString
                 
-                if content.range(of: "\\[INFO\\] Started", options: .regularExpression) != nil &&
+                if content.range(of: "\\[INFO\\] Monitoring", options: .regularExpression) != nil &&
                     !started {
                     started = true
                     DispatchQueue.main.async {

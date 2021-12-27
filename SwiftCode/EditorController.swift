@@ -29,7 +29,7 @@ import AppKit
         self.openXcodeProject(self)
     }
     
-    @IBAction func saveCurrentFile(sender: AnyObject?) {
+    @IBAction func saveCurrentFile(_ sender: Any?) {
         let contents = self.textView.string
         guard let file = self.textView.editingFile
             else {
@@ -40,7 +40,7 @@ import AppKit
         try? contents.data(using: .utf8)?.write(to: file as URL, options: Data.WritingOptions.atomic)
     }
     
-    @IBAction func openXcodeProject(_ sender: AnyObject?) {
+    @IBAction func openXcodeProject(_ sender: Any?) {
         let openDialog = NSOpenPanel()
         openDialog.canChooseFiles = true
         openDialog.canChooseDirectories = false

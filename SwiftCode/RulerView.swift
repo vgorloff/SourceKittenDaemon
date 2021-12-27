@@ -37,9 +37,9 @@ class RulerView: NSRulerView {
                 }
             }
             if newValue is NSTextView {
-                center.addObserver(self, selector: "textDidChange:", name: NSText.didChangeNotification, object: newValue)
+                center.addObserver(self, selector: #selector(textDidChange(_:)), name: NSText.didChangeNotification, object: newValue)
                 scrollView!.contentView.postsBoundsChangedNotifications = true
-                center.addObserver(self, selector: "boundsDidChange:", name: NSView.boundsDidChangeNotification, object: scrollView!.contentView)
+                center.addObserver(self, selector: #selector(boundsDidChange(_:)), name: NSView.boundsDidChangeNotification, object: scrollView!.contentView)
                 invalidateLineIndices()
             }
         }
@@ -60,11 +60,11 @@ class RulerView: NSRulerView {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func boundsDidChange(notification: NSNotification) {
+    @objc func boundsDidChange(_ notification: NSNotification) {
         needsDisplay = true
     }
 
-    func textDidChange(notification: NSNotification) {
+    @objc func textDidChange(_ notification: NSNotification) {
         invalidateLineIndices()
         needsDisplay = true
     }
